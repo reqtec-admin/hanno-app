@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #07090b;
+  color: #ebf1f5;
+}
+
+body {
+  background-image:
+    radial-gradient(1200px 500px at 10% -10%, rgba(43, 162, 194, 0.12), transparent 50%),
+    radial-gradient(800px 400px at 100% 0%, rgba(7, 54, 68, 0.55), transparent 45%);
+}
+
+::selection {
+  background: rgba(43, 162, 194, 0.35);
+}
+
+.grade-ring {
+  background: conic-gradient(var(--grade-color) calc(var(--pct) * 1%), rgba(255, 255, 255, 0.08) 0);
+}
