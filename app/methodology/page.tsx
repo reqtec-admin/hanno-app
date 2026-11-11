@@ -57,8 +57,8 @@ export default function MethodologyPage() {
 }
 
 const copy: Record<string, string> = {
-  covidPolicy:
-    "Did the company turn official COVID narratives into product policy — labels, removals, workplace rules that outlasted the emergency?",
+  publicHealthPolicy:
+    "Did the company turn official public-health guidance into workplace rules, product policy, or speech floors that outlasted the emergency?",
   vaccineMandate:
     "Did it condition employment or campus access on vaccination in 2021–2022, and how hard did it push contractors?",
   censorship:

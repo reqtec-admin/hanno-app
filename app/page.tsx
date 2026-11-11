@@ -31,7 +31,7 @@ export default function HomePage() {
         Yuka for the stack you actually pay.
       </h1>
       <p className="mt-4 max-w-2xl text-ink-300">
-        Simple traffic-light score. Five classifiers on COVID policy, mandates, censorship, and politicized spend. Click through for receipts and 990 traces of associated organizations. Then the quieter alternative and the playbook.
+        Simple traffic-light score. Five classifiers on public health policy, mandates, censorship, and politicized spend. Click through for receipts and 990 traces of associated organizations. Then the quieter alternative and the playbook.
       </p>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
