@@ -1,5 +1,5 @@
 export type ClassifierKey =
-  | "covidPolicy"
+  | "publicHealthPolicy"
   | "vaccineMandate"
   | "censorship"
   | "lgbtqDonations"

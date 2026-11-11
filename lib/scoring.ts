@@ -1,7 +1,7 @@
 import type { ClassifierKey, Company, Grade } from "./types";
 
 export const CLASSIFIERS: { key: ClassifierKey; label: string; short: string; weight: number }[] = [
-  { key: "covidPolicy", label: "Corporate COVID policy", short: "COVID policy", weight: 1 },
+  { key: "publicHealthPolicy", label: "Public Health Policy", short: "Public health", weight: 1 },
   { key: "vaccineMandate", label: "Vaccine mandates", short: "Mandates", weight: 1 },
   { key: "censorship", label: "Censorship / deplatforming", short: "Censorship", weight: 1.2 },
   { key: "lgbtqDonations", label: "LGBTQ / Pride activism spend", short: "Pride spend", weight: 0.9 },
