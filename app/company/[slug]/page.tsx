@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { GradeBadge } from "@/components/GradeBadge";
+import { StoplightBadge } from "@/components/StoplightBadge";
 import { ScoreBars } from "@/components/ScoreBars";
 import { COMPANIES, getCompanies, getCompany } from "@/lib/data/companies";
 import { CATEGORY_META } from "@/lib/data/categories";
@@ -43,11 +43,10 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             ))}
           </div>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-ink-800/70 p-5">
-          <GradeBadge grade={grade} score={score} size="lg" />
-          <p className="mt-3 max-w-xs text-xs text-ink-300">
-            Alignment score for SMBs that treat mandates, speech enforcement, and activist spend as
-            vendor risk.
+        <div className="flex flex-col items-center rounded-2xl border border-white/10 bg-ink-800/70 p-5">
+          <StoplightBadge score={score} size="lg" />
+          <p className="mt-3 max-w-xs text-center text-xs text-ink-300">
+            Higher is quieter. Alignment for SMBs that treat mandates, speech enforcement, and activist spend as vendor risk. Letter grade {grade}.
           </p>
         </div>
       </div>
@@ -72,11 +71,37 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
         </section>
       </div>
 
+      {company.orgs && company.orgs.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-2xl font-semibold">Organizations & 990 trace</h2>
+          <p className="mt-2 text-sm text-ink-300">
+            Public associations, grants, and sponsorships. 990 filings are the primary source for nonprofit finances and grants. Click through for the filing.
+          </p>
+          <div className="mt-5 space-y-3">
+            {company.orgs.map((org) => (
+              <div key={org.name} className="rounded-2xl border border-white/10 bg-ink-800/50 p-4">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="font-medium text-ink-50">
+                    {org.name}
+                    {org.ein && <span className="ml-2 text-xs text-ink-400">EIN {org.ein}</span>}
+                  </h3>
+                  {org.year && <span className="text-xs text-teal-300">{org.year}</span>}
+                </div>
+                <p className="mt-1 text-sm text-ink-300">{org.relation}{org.amount ? ` · ${org.amount}` : ""}</p>
+                <p className="mt-2 text-sm text-ink-200">{org.highlights}</p>
+                <a href={org.sourceUrl} className="mt-2 inline-block text-sm text-teal-300" target="_blank" rel="noreferrer">
+                  {org.sourceLabel} ↗
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="mt-10">
         <h2 className="text-2xl font-semibold">Historical receipts</h2>
         <p className="mt-2 text-sm text-ink-300">
-          Public events used in the grade. Read the primary source before you treat any line as
-          scripture.
+          Public events used in the grade. Read the primary source before you treat any line as scripture.
         </p>
         <ol className="mt-5 space-y-3">
           {company.receipts.map((r) => (
@@ -89,7 +114,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                 <span className="text-xs uppercase tracking-wider text-ink-300">{r.classifier}</span>
               </div>
               <p className="mt-2 text-sm text-ink-300">{r.detail}</p>
-              <a href={r.sourceUrl} className="mt-2 inline-block text-sm text-teal-300" target="_blank">
+              <a href={r.sourceUrl} className="mt-2 inline-block text-sm text-teal-300" target="_blank" rel="noreferrer">
                 {r.sourceLabel} ↗
               </a>
             </li>
