@@ -30,6 +30,17 @@ export interface Receipt {
   classifier: ClassifierKey;
 }
 
+export interface OrgAssociation {
+  name: string;
+  ein?: string;
+  relation: string;
+  year?: number;
+  amount?: string;
+  highlights: string;
+  sourceLabel: string;
+  sourceUrl: string;
+}
+
 export interface ClassifierScore {
   key: ClassifierKey;
   label: string;
@@ -49,6 +60,7 @@ export interface Company {
   scores: Record<ClassifierKey, number>;
   summaries: Record<ClassifierKey, string>;
   receipts: Receipt[];
+  orgs?: OrgAssociation[];
   alternatives: string[];
   spendNote: string;
   smbRisk: string;

@@ -22,6 +22,14 @@ export default function MethodologyPage() {
           </li>
         ))}
       </ol>
+      <h2 className="mt-8 text-xl font-semibold">The stoplight</h2>
+      <p className="mt-3 text-ink-300">
+        Overall score 0–100 maps to a Yuka-style traffic light: 75+ Excellent (green), 50–74 Good, 25–49 Poor (amber), below 25 Bad (red). Letter grade is secondary. Higher means less coercive pattern on the five classifiers.
+      </p>
+      <h2 className="mt-8 text-xl font-semibold">Organizations & 990s</h2>
+      <p className="mt-3 text-ink-300">
+        Company pages list known associations (foundations, HRC, grant recipients). Links go to ProPublica Nonprofit Explorer or primary reports so you can open the actual Form 990 and see grants, officers, and finances yourself.
+      </p>
       <h2 className="mt-8 text-xl font-semibold">Math</h2>
       <p className="mt-3 text-ink-300">
         Each classifier is 0–20. Twenty means the vendor stayed out of the coercive pattern. Zero

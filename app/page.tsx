@@ -17,7 +17,7 @@ export default function HomePage() {
       if (kind !== "all" && c.kind !== kind) return false;
       if (cat !== "all" && !c.categories.includes(cat)) return false;
       if (!q.trim()) return true;
-      const hay = `${c.name} ${c.tagline} ${c.categories.join(" ")}` .toLowerCase();
+      const hay = `${c.name} ${c.tagline} ${c.categories.join(" ")}`.toLowerCase();
       return hay.includes(q.trim().toLowerCase());
     }).sort((a, b) => overallScore(b) - overallScore(a));
   }, [q, kind, cat]);
@@ -31,9 +31,7 @@ export default function HomePage() {
         Yuka for the stack you actually pay.
       </h1>
       <p className="mt-4 max-w-2xl text-ink-300">
-        HANNO grades vendors on coercive COVID policy, vaccine mandates, censorship and
-        deplatforming, Pride-as-procurement spend, and other politicized donations. Then it hands an
-        SMB a cheaper, quieter alternative and a playbook with a rollback.
+        Simple traffic-light score. Five classifiers on COVID policy, mandates, censorship, and politicized spend. Click through for receipts and 990 traces of associated organizations. Then the quieter alternative and the playbook.
       </p>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
